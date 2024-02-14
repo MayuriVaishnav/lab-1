@@ -1,0 +1,55 @@
+2. Accept no and find out the Sum of digit (123=1+2+3=6)
+Ans.
+import java.util.Scanner;
+public class SumOFDigit {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while(true) {
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        int sum = calculateSumOfDigits(number);
+        System.out.println("Sum of digits: " + sum);
+    }
+    }
+    public static int calculateSumOfDigits(int num) {
+        int sum = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            switch (digit) {
+                case 0:
+                    sum += 0;
+                    break;
+                case 1:
+                    sum += 1;
+                    break;
+                case 2:
+                    sum += 2;
+                    break;
+                case 3:
+                    sum += 3;
+                    break;
+                case 4:
+                    sum += 4;
+                    break;
+                case 5:
+                    sum += 5;
+                    break;
+                case 6:
+                    sum += 6;
+                    break;
+                case 7:
+                    sum += 7;
+                    break;
+                case 8:
+                    sum += 8;
+                    break;
+                case 9:
+                    sum += 9;
+                    break;
+            }
+            num /= 10;
+        }
+        return sum;
+    }
+}
