@@ -1,0 +1,31 @@
+5. Accept 5 no. and find out the greatest
+Ans.
+import java.util.Scanner;
+
+public class FindGreatestNumber {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] numbers = new int[5];
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Enter number " + (i + 1) + ": ");
+            numbers[i] = scanner.nextInt();
+        }
+
+        int greatest = findGreatest(numbers);
+
+        System.out.println("The greatest number is: " + greatest);
+    }
+
+    public static int findGreatest(int[] numbers) {
+        int greatest = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > greatest) {
+                greatest = numbers[i];
+            }
+        }
+        return greatest;
+    }
+}
