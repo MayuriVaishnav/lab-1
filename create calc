@@ -1,0 +1,45 @@
+7. Accept choice from user and create CALC
+Ans.
+import java.util.Scanner;
+
+public class Calculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter operator (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
+
+        double result = calculateResult(num1, num2, operator);
+
+        System.out.println("Result: " + result);
+    }
+
+    public static double calculateResult(double num1, double num2, char operator) {
+        switch (operator) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            case '/':
+                if (num2 != 0) {
+                    return num1 / num2;
+                } else {
+                    System.out.println("Cannot divide by zero.");
+                    System.exit(0);
+                }
+            default:
+                System.out.println("Invalid operator.");
+                System.exit(0);
+                return 0; // This return is just to satisfy the compiler; it won't be reached.
+        }
+    }
+}
