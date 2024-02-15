@@ -1,0 +1,27 @@
+6. Accept a no from the user and display the month name
+Ans.
+import java.util.Scanner;
+public class MonthNameDisplay {
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        while(true) {
+        System.out.print("Enter a number representing a month (1-12): ");
+        int monthNumber = sc.nextInt();
+
+        String monthName = getMonthName(monthNumber);
+
+        System.out.println("The month is: " + monthName);
+    }
+    }
+    public static String getMonthName(int monthNumber) {
+        String[] months = {"January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"};
+
+        if (monthNumber >= 1 && monthNumber <= 12) {
+            return months[monthNumber - 1];
+        } else {
+            return "Invalid month number";
+        }
+    }
+}
